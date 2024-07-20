@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>To do  list</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- start navbar -->
+   <nav>
+    <h1 class="mainHead">To Do List</h1>
+    <button class="addTask" id="add" onclick="openForm()">Add a Task</button>
+   </nav>
+   <!-- end navbar -->
+   <!-- start form -->
+    <form id="form" onsubmit="addTask(event)">
+        <h2>Add a Task</h2>
+        <input type="number" placeholder="task id" id="id">
+        <input type="text"   placeholder="task title" id="title">
+        <input type="date"   placeholder="deadline" id="deadline">
+        <textarea cols="30" rows="10" placeholder="task description" id="des"></textarea>
+        <button type="submit">Add</button>
+    </form> 
+   <!--end form  -->
+
+   <!--start task card  -->
+   <div id="taskContainer" class="card-container">
+   <div class="card">
+    <p class="card_id">#id</p>
+    <h3 class="card_title">task title</h3>
+    <p class="card_date">03/08/2024</p>
+    <p class="card_des">task descrit amet consectetur adipisicing elit. Repudiandae ipsum, nostrum rem totam quam fugiat</p>
+    <div class="card_footer">
+        <label class="done">
+        <input type="checkbox" onchange="toggleDone(this)"> Done</label>
+        <button class="delete"  onclick="deleteTask(this)">Delete</button>
+    </div>
+   </div>
+</div>
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,185 @@
+:root{
+    --primary:#EEF7FF;
+    --secondary:#CDE8E5;
+    --text:	#4D869C;
+}
+body{
+    background-color: var(--primary);
+    margin: 0;
+    font-style: oblique;
+    letter-spacing: 3px;
+}
+button:hover{
+    cursor: pointer;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: 50px;
+    background-color: var(--text);
+    
+}
+.mainHead{
+    font-size: 50px;
+    margin: 0;
+    font-style: oblique;
+    color: var(--secondary);
+}
+.addTask{
+    width: 150px;
+    height: 40px;border-radius: 20px;
+    background-color: var(--primary);
+    border: none;
+    font-size: 16px;
+    font-weight:600;
+    color: var(--text);
+}
+form{
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    background-color: var(--primary);
+    border: 1px solid var(--text);
+    color: var(--text);
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-20px); 
+    transition: opacity 0.5s, transform 0.5s; 
+    position: absolute;
+    top: 90px;
+    right: 0%;
+    z-index: 10;
+}
+form.show {
+    visibility: visible; 
+    height: 500px;
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0s; 
+}
+form input{
+    width: 100%;
+    height: 25px;
+    background-color: var(--primary);
+    padding: 10px;
+    border: 2px solid var(--text);
+    border-radius: 25px;
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+form input:focus{
+    outline: none;
+}
+form textarea{
+    width: 100%;
+    padding: 10px;
+    background-color: var(--primary);
+    border: 2px solid var(--text);
+    border-radius: 25px;
+    margin-bottom: 30px;
+    font-size: 14px;
+
+}
+form textarea:focus{
+    outline: none;
+}
+form button{
+    width: 150px;
+    height: 50px;
+    border-radius: 20px;
+    background-color: var(--text);
+    border: none;
+    font-size: 16px;
+    font-weight:600;
+    color: var(--primary);
+}
+#taskContainer{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 10px   ;
+}
+.card{
+    width: 45%;
+    height: 250px;
+    border-radius: 20px;
+    margin-bottom:30px ;
+    padding: 10px;
+    background-color: var(--secondary);
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+.card.checked{
+    background-color: rgb(197, 255, 197);
+}
+.card_id{
+    font-size: 30px;
+    /* color: var(--text); */
+    padding: 10px;
+    margin: 0;
+}
+.card_title{
+    font-size: 35px;
+    margin:0;
+    text-align: center;
+}
+.card_date{
+    text-align: center;
+    margin: 0;
+}
+.card_des{
+    flex-grow: 1;
+    margin: 10px 20px;
+    overflow-y:auto;
+    overflow-x: hidden;
+    scrollbar-width: none;
+    text-align: center;
+    font-size: 16px;
+}
+.card_footer{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.done{
+    font-weight: bold;
+    font-size: 18px;
+}
+.delete{
+    background-color:transparent;
+    border: 0;
+    font-weight: bold;
+    font-size: 18px;
+     color: var(--text);
+}
+
+/* mobile view */
+@media (max-width: 550px){
+    form{
+        top: 80px;
+        width: 80%;
+    }
+    .card{
+        width: 90%;
+        height: 300px;
+    }
+
+    .mainHead{
+        font-size: 30px;
+    }
+    .addTask{
+        width: 50px;
+        height: 50px;
+        border-radius: 50px;
+        font-size: 13px;
+        font-weight:500;
+    }
+}
